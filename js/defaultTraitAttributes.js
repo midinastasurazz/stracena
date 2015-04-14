@@ -50,7 +50,7 @@ define({
 		meshRotation: 3.3
 	},
 	6: {//12	
-		trait: 1,
+		trait: 9,
 		cameraZoom: 75,
 		meshRotation: 3.3
 	},
