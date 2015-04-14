@@ -7,15 +7,15 @@ define({
 		    'Charakter hlez. kloubu',
 		    'Spěnka',
 		    'Paznehty - patka',
+		    'Délka vem. - př. čtvrtě',		    
 		    'Úhel př. upnutí vem.',
-		    'Délka vem. - př. čtvrtě',
-		    'Délka zadního upnutí',
-		    'Závěsný vaz',
-		    'Základna vem. - hloubka',
-		    'Post. struků - vychýlení',
+		    'Rozmístění př. struků',
 		    'Délka struků',
 		    'Tloušťka struků',
-		    'Rozmístění př. struků'
+		    'Základna vem. - hloubka',
+		    'Délka zadního upnutí',
+		    'Závěsný vaz',
+		    'Post. struků - vychýlení'
 		],
 		bodyFeaturesPanelTitle: 'Znaky'
 	},
@@ -27,15 +27,15 @@ define({
 			'Hocks',
 			'Fetlock',
 			'Foot angle',
-			'Fore udder attachm.',
 			'Fore udder length',
-			'Rear udder length',
-			'Suspensory ligam.',
-			'Udder depht',
-			'Teat placement',
+			'Fore udder attachm.',
+			'Front teat placement',
 			'Teat length',
 			'Teat thickness',
-			'Front teat placement'
+			'Udder depth',
+			'Rear udder length',
+			'Suspensory ligam.',
+			'Teat placement'
 		],
 		bodyFeaturesPanelTitle: 'Traits'
 	},
@@ -47,15 +47,15 @@ define({
 			'Sprunggelenksausprägung',
 			'Fessel',
 			'Trachten',
-			'Voreuteraufhängung',
 			'Voreuterlänge',
-			'Schenkeleuterlänge',
-			'Zentralband',
-			'Euterboden',
-			'Strichstellung hinten',
+			'Voreuteraufhängung',
+			'Strichplatzierung vorne',
 			'Strichlänge',
 			'Strichdicke',
-			'Strichplatzierung vorne'
+			'Euterboden',
+			'Schenkeleuterlänge',
+			'Zentralband',
+			'Strichstellung hinten'
 		],
 		bodyFeaturesPanelTitle: 'Körpermerkmale'		
 	}

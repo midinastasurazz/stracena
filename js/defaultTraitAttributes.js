@@ -44,47 +44,47 @@ define({
 		cameraZoom: 85,
 		meshRotation: 2.5
 	},
-	5: {//11
+	5: {//12	
 		trait: 9,
 		cameraZoom: 75,
 		meshRotation: 3.3
 	},
-	6: {//12	
+	6: {//11
 		trait: 9,
 		cameraZoom: 75,
 		meshRotation: 3.3
 	},
-	7: {//14
+	7: {//20
+		trait: 5,
+		cameraZoom: 95,
+		meshRotation: 1.5
+	},
+	8: {//18
+		trait: 5,
+		cameraZoom: 90,
+		meshRotation: 0.1
+	},
+	9: {//19
+		trait: 1,
+		cameraZoom: 90,
+		meshRotation: 0.1
+	},
+	10: {//16
+		trait: 5,
+		cameraZoom: 90,
+		meshRotation: 0.1
+	},
+	11: {//14
 		trait: 5,
 		cameraZoom: 75,
 		meshRotation: 2.9
 	},
-	8: {//15
+	12: {//15
 		trait: 1,
 		cameraZoom: 95,
 		meshRotation: 1.5
 	},
-	9: {//16
-		trait: 5,
-		cameraZoom: 90,
-		meshRotation: 0.1
-	},
-	10: {//17
-		trait: 5,
-		cameraZoom: 95,
-		meshRotation: 1.5
-	},
-	11: {//18
-		trait: 5,
-		cameraZoom: 90,
-		meshRotation: 0.1
-	},
-	12: {//19
-		trait: 1,
-		cameraZoom: 90,
-		meshRotation: 0.1
-	},
-	13: {//20
+	13: {//17
 		trait: 5,
 		cameraZoom: 95,
 		meshRotation: 1.5
