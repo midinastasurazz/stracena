@@ -1,0 +1,9 @@
+{{#each features}}
+	<span style="float: left; width: 35px;">
+		<a id="lookAtBodyFeature{{@index}}" class="btn btn-default btn-xs"><i class="fa fa-video-camera fa-lg"></i></a>
+	</span>
+	<span id="bodyFeatureLabel{{@index}}" style="float: left; width: 185px;">{{this}}</span>
+	<input type="range" id="morph{{@index}}"  style="float: left; width: 50%; margin-top: 4px; padding-top: 0px; padding-bottom: 0px;" min="1" max="9" step="1" value="1">
+	&nbsp;&nbsp;<span id="morph{{@index}}Span">1</span>
+	<br /><br />
+{{/each}}
