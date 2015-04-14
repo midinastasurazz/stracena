@@ -32,7 +32,7 @@ define({
 	2: {//8
 		trait: 5,
 		cameraZoom: 95,
-		meshRotation: 1.5
+		meshRotation: 1.55
 	},
 	3: {//9
 		trait: 5,
@@ -47,7 +47,7 @@ define({
 	5: {//12	
 		trait: 9,
 		cameraZoom: 75,
-		meshRotation: 3.3
+		meshRotation: 0.28
 	},
 	6: {//11
 		trait: 9,
@@ -57,7 +57,7 @@ define({
 	7: {//20
 		trait: 5,
 		cameraZoom: 95,
-		meshRotation: 1.5
+		meshRotation: 1.55
 	},
 	8: {//18
 		trait: 5,
@@ -82,11 +82,11 @@ define({
 	12: {//15
 		trait: 1,
 		cameraZoom: 95,
-		meshRotation: 1.5
+		meshRotation: 1.34
 	},
 	13: {//17
 		trait: 5,
 		cameraZoom: 95,
-		meshRotation: 1.5
+		meshRotation: 1.55
 	}
 });
