@@ -1,29 +1,9 @@
 define({
-	// 0: {//1
-	// 	trait: 5,
-	// 	cameraZoom: 95,
-	// 	meshRotation: 3.1
-	// },
-	// 1: {//3
-	// 	trait: 5,
-	// 	cameraZoom: 95,
-	// 	meshRotation: 3.1
-	// },
-	// 2: {//4
-	// 	trait: 1,
-	// 	cameraZoom: 95,
-	// 	meshRotation: 1.7
-	// },
 	0: {//5
 		trait: 5,
 		cameraZoom: 85,
 		meshRotation: 2.5
 	},
-	// 4: {//6
-	// 	trait: 5,
-	// 	cameraZoom: 85,
-	// 	meshRotation: 2.5
-	// },
 	1: {//7
 		trait: 5,
 		cameraZoom: 85,
