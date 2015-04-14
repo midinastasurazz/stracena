@@ -25,7 +25,7 @@ define({
 		meshRotation: 2.5
 	},
 	5: {//12	
-		trait: 9,
+		trait: 1,
 		cameraZoom: 75,
 		meshRotation: 0.28
 	},
