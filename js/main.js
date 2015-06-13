@@ -104,11 +104,11 @@ var simmental = (function () {
 
 				$('#sliders').append( renderedTemplateHtml );
 
-				function singleSliderMorpher( index, defaultModelTraitValue, rangeValue ) {
+				function singleSliderMorpher( traitIndex, defaultModelTraitValue, rangeValue ) {
 					// rangeValue is between 0 and 2
 
-					var firstMorphIndex  = index * 2,
-						secondMorphIndex = index * 2 + 1;
+					var firstMorphIndex  = traitIndex * 2,
+						secondMorphIndex = traitIndex * 2 + 1;
 
 					switch ( defaultModelTraitValue ) {
 						case 1:
@@ -157,6 +157,7 @@ var simmental = (function () {
 						}
 
 						$( '#morph' + index + 'Span' ).text( slideEvent.target.value );
+						// TODO BELOW
 						singleSliderMorpher( index, defaultTrait, (slideEvent.target.value - 1) / 4 );
 					};
 				}
