@@ -97,6 +97,21 @@ var simmental = (function () {
 
 		require(['js/intl', 'js/defaultTraitAttributes'], function( intl, defaultTraitAttributes ) {
 
+			var morphsStartAt = [];
+			var morphsCountPerTrait = [];
+			var offsetAccumulator = 0;
+
+			var traitCount = Object.keys(defaultTraitAttributes).length;
+
+			for (var i = 0; i < traitCount; i++) {
+    			morphsStartAt[i] = offsetAccumulator;
+    			morphsCountPerTrait[i] = defaultTraitAttributes[i].morphsList.length;
+    			offsetAccumulator += defaultTraitAttributes[i].morphsList.length;
+			};
+
+			// console.log(morphsStartAt);
+			// console.log(morphsCountPerTrait);
+
 			function createSliders() {
 				var	templateContext = { features: intl['Czech']['bodyFeatures'] },
 					handlebarsTemplateName = 'slider',
@@ -104,6 +119,81 @@ var simmental = (function () {
 
 				$('#sliders').append( renderedTemplateHtml );
 
+				function singleSliderMorpher( traitIndex, defaultModelTraitValue, selectedRangeValue ) {
+					// selectedRangeValue is between 1 and 9
+
+					function resetCurrentTraitMorphs() {
+						for (var i = 0; i < morphsCountPerTrait[ traitIndex ]; i++) {
+							mesh.morphTargetInfluences[ morphsStartAt[ traitIndex ] + i ] = 0;
+						}
+					}
+
+					var dml = defaultTraitAttributes[traitIndex].morphsList;
+
+					//console.log(mesh.morphTargetInfluences);
+					//console.log(selectedRangeValue + ' ' + defaultModelTraitValue);
+
+					if ( selectedRangeValue === defaultModelTraitValue ) {
+						resetCurrentTraitMorphs();
+					} else {
+						var positionInsideMorphsList = dml.indexOf( selectedRangeValue );
+
+					 	if ( positionInsideMorphsList !== -1 ) {
+					 		resetCurrentTraitMorphs();
+							mesh.morphTargetInfluences[ morphsStartAt[ traitIndex ] + positionInsideMorphsList ] = 1;
+						} else {
+							resetCurrentTraitMorphs();
+
+							// important to set indexes to -1, Default
+							// for cases that Default it the Leftmost or Rightmost index
+							var leftIndex = -1;
+							var rightIndex = -1;
+							var reverseI;
+
+							for (var i = 0; i < dml.length; i++) {
+								reverseI = (dml.length - 1) - i;
+
+								if ( dml[i] < selectedRangeValue ) {
+									leftIndex = i;
+								}
+
+								if ( selectedRangeValue < dml[reverseI] ) {
+									rightIndex = reverseI;
+								}
+							}
+
+							if ( defaultModelTraitValue < selectedRangeValue 
+								&& dml[leftIndex] < defaultModelTraitValue ) {
+								leftIndex = -1; //sentinel value signifying that Default is used as Left
+							}
+
+							if ( selectedRangeValue < defaultModelTraitValue
+								&& defaultModelTraitValue < dml[rightIndex] ) {
+								rightIndex = -1; //sentinel value signifying that Default is used as Right
+							}
+
+							if ( leftIndex !== -1 ) {
+								if ( rightIndex === -1 ) {
+									mesh.morphTargetInfluences[ morphsStartAt[ traitIndex ] + leftIndex ] = 
+										(defaultModelTraitValue - selectedRangeValue) / (defaultModelTraitValue - dml[leftIndex]);
+								} else {
+									mesh.morphTargetInfluences[ morphsStartAt[ traitIndex ] + leftIndex ] = 
+										(dml[rightIndex] - selectedRangeValue) / (dml[rightIndex] - dml[leftIndex]);
+								}
+							}
+							if ( rightIndex !== -1 ) {
+								if ( leftIndex === -1 ) {
+									mesh.morphTargetInfluences[ morphsStartAt[ traitIndex ] + rightIndex ] =
+										(selectedRangeValue - defaultModelTraitValue) / (dml[rightIndex] - defaultModelTraitValue);
+								} else {
+									mesh.morphTargetInfluences[ morphsStartAt[ traitIndex ] + rightIndex ] =
+										(selectedRangeValue - dml[leftIndex]) / (dml[rightIndex] - dml[leftIndex]);
+								}
+							}
+						}
+					}
+				}
+				/*
 				function singleSliderMorpher( traitIndex, defaultModelTraitValue, rangeValue ) {
 					// rangeValue is between 0 and 2
 
@@ -140,6 +230,7 @@ var simmental = (function () {
 							break;
 					}
 				}
+				*/
 
 				function slideEventHandlerMaker( index ) {
 					var defaultTrait = ( defaultTraitAttributes[index].trait === undefined ) ? 5 : defaultTraitAttributes[index].trait;
@@ -150,15 +241,16 @@ var simmental = (function () {
 						// `this` refers to the changed range input DOM element
 						
 						if ( lastChangedTrait !== index ) {
-							// reset last modified trait to default value
+							// reset last modified trait to `Default Value`
 							$( '#morph' + lastChangedTrait ).val( defaultTraitAttributes[ lastChangedTrait ].trait );
 							$( '#morph' + lastChangedTrait ).trigger( 'change' );
 							lastChangedTrait = index;
 						}
 
 						$( '#morph' + index + 'Span' ).text( slideEvent.target.value );
-						// TODO BELOW
-						singleSliderMorpher( index, defaultTrait, (slideEvent.target.value - 1) / 4 );
+
+						// (slideEvent.target.value - 1) / 4
+						singleSliderMorpher( index, defaultTrait, parseInt( slideEvent.target.value ) );
 					};
 				}
 

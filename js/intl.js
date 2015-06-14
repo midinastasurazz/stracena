@@ -3,6 +3,7 @@ define({
 		language: 'Čeština',
 		bodyFeatures: [
 		    'Sklon zádě',
+		    'Šířka kyčle',
 		    'Hloubka středotrupí',
 		    'Postoj zad. končetin',
 		    'Charakter hlez. kloubu',
@@ -16,8 +17,7 @@ define({
 		    'Základna vem. - hloubka',
 		    'Délka zadního upnutí',
 		    'Závěsný vaz',
-		    'Post. struků - vychýlení',
-		    'Šířka kyčle'
+		    'Post. struků - vychýlení'
 		],
 		bodyFeaturesPanelTitle: 'Znaky'
 	},
@@ -25,6 +25,7 @@ define({
 		language: 'English',
 		bodyFeatures: [
 			'Rump angle',
+			'Hip width',			
 			'Body depth',
 			'Hock angularity',
 			'Hocks',
@@ -38,8 +39,7 @@ define({
 			'Udder depth',
 			'Rear udder length',
 			'Suspensory ligam.',
-			'Teat placement',
-			'Hip width'
+			'Teat placement'
 		],
 		bodyFeaturesPanelTitle: 'Traits'
 	},
@@ -47,6 +47,7 @@ define({
 		language: 'Deutsch',
 		bodyFeatures: [
 			'Beckenneigung',
+			'Hüftbreite',			
 			'Rumpftiefe',
 			'Sprunggelenkswinkel',
 			'Sprunggelenksausprägung',
@@ -60,8 +61,7 @@ define({
 			'Euterboden',
 			'Schenkeleuterlänge',
 			'Zentralband',
-			'Strichstellung hinten',
-			'Hüftbreite'
+			'Strichstellung hinten'
 		],
 		bodyFeaturesPanelTitle: 'Körpermerkmale'		
 	}
