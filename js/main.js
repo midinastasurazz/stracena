@@ -109,9 +109,6 @@ var simmental = (function () {
     			offsetAccumulator += defaultTraitAttributes[i].morphsList.length;
 			};
 
-			// console.log(morphsStartAt);
-			// console.log(morphsCountPerTrait);
-
 			function createSliders() {
 				var	templateContext = { features: intl['Czech']['bodyFeatures'] },
 					handlebarsTemplateName = 'slider',
@@ -130,12 +127,12 @@ var simmental = (function () {
 
 					var dml = defaultTraitAttributes[traitIndex].morphsList;
 
-					//console.log(mesh.morphTargetInfluences);
-					//console.log(selectedRangeValue + ' ' + defaultModelTraitValue);
-
 					if ( selectedRangeValue === defaultModelTraitValue ) {
 						resetCurrentTraitMorphs();
 					} else {
+
+						// console.log(mesh.morphTargetInfluences);
+
 						var positionInsideMorphsList = dml.indexOf( selectedRangeValue );
 
 					 	if ( positionInsideMorphsList !== -1 ) {
@@ -144,7 +141,7 @@ var simmental = (function () {
 						} else {
 							resetCurrentTraitMorphs();
 
-							// important to set indexes to -1, Default
+							// important to set indexes to -1 (Default)
 							// for cases that Default it the Leftmost or Rightmost index
 							var leftIndex = -1;
 							var rightIndex = -1;
@@ -193,44 +190,6 @@ var simmental = (function () {
 						}
 					}
 				}
-				/*
-				function singleSliderMorpher( traitIndex, defaultModelTraitValue, rangeValue ) {
-					// rangeValue is between 0 and 2
-
-					var firstMorphIndex  = traitIndex * 2,
-						secondMorphIndex = traitIndex * 2 + 1;
-
-					switch ( defaultModelTraitValue ) {
-						case 1:
-							if ( rangeValue <= 1 ) {
-								mesh.morphTargetInfluences[ firstMorphIndex ] = rangeValue;
-								mesh.morphTargetInfluences[ secondMorphIndex ] = 0;
-							} else {
-								mesh.morphTargetInfluences[ firstMorphIndex ] = 1 - (rangeValue - 1);
-								mesh.morphTargetInfluences[ secondMorphIndex ] = rangeValue - 1;
-							}
-							break;
-						case 5:
-							if ( rangeValue <= 1 ) {
-								mesh.morphTargetInfluences[ firstMorphIndex ] = 1 - rangeValue;
-								mesh.morphTargetInfluences[ secondMorphIndex ] = 0;
-							} else {
-								mesh.morphTargetInfluences[ firstMorphIndex ] = 0;
-								mesh.morphTargetInfluences[ secondMorphIndex ] = rangeValue - 1;
-							}
-							break;
-						case 9:						
-							if ( rangeValue <= 1 ) {
-								mesh.morphTargetInfluences[ firstMorphIndex ] = 1 - rangeValue;
-								mesh.morphTargetInfluences[ secondMorphIndex ] = rangeValue;
-							} else {
-								mesh.morphTargetInfluences[ firstMorphIndex ] = 0;
-								mesh.morphTargetInfluences[ secondMorphIndex ] = 2 - rangeValue;
-							}
-							break;
-					}
-				}
-				*/
 
 				function slideEventHandlerMaker( index ) {
 					var defaultTrait = ( defaultTraitAttributes[index].trait === undefined ) ? 5 : defaultTraitAttributes[index].trait;
@@ -267,13 +226,6 @@ var simmental = (function () {
 					$( '#morph' + i ).on('change input', slideEventHandlerMaker(i));
 					$( '#lookAtBodyFeature' + i ).on('click', lookAtBodyFeatureHandlerMaker(i));
 				}
-
-				// function setAllSlidersAtOnce( masterValue ) {
-				// 	for ( var i = 0; i < intl['Czech']['bodyFeatures'].length; i++ ) {
-				// 		$( '#morph' + i ).val( masterValue );
-				// 		$( '#morph' + i ).trigger( 'change' );
-				// 	}
-				// }
 
 				function setAllSlidersToDefault() {
 					for ( var i = 0; i < intl['Czech']['bodyFeatures'].length; i++ ) {
@@ -330,9 +282,6 @@ var simmental = (function () {
 		function rotateCameraX( degreesDelta ) {
 			var angle = degreesDelta * Math.PI / 180;
 			mesh.rotateX(angle);
-			// var quaternion = new THREE.Quaternion();
-			// quaternion.setFromAxisAngle( xAxis, angle );
-			// camera.position = camera.position.applyQuaternion( quaternion );
 		}
 
 		function rotateCameraY( degreesDelta ) {

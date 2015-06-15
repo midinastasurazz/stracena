@@ -3,7 +3,6 @@ define({
 		language: 'Čeština',
 		bodyFeatures: [
 		    'Sklon zádě',
-		    'Šířka kyčle',
 		    'Hloubka středotrupí',
 		    'Postoj zad. končetin',
 		    'Charakter hlez. kloubu',
@@ -25,7 +24,6 @@ define({
 		language: 'English',
 		bodyFeatures: [
 			'Rump angle',
-			'Hip width',			
 			'Body depth',
 			'Hock angularity',
 			'Hocks',
@@ -47,7 +45,6 @@ define({
 		language: 'Deutsch',
 		bodyFeatures: [
 			'Beckenneigung',
-			'Hüftbreite',			
 			'Rumpftiefe',
 			'Sprunggelenkswinkel',
 			'Sprunggelenksausprägung',
