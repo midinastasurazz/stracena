@@ -78,15 +78,21 @@ define({
 		morphsList: [1, 9]
 	},
 	13: {//15
-		trait: 3,
+		trait: 2,
 		cameraZoom: 95,
 		meshRotation: 1.34,
-		morphsList: [1, 2, 4, 5, 6, 7, 8, 9]
+		morphsList: [1, 3, 4, 5, 6, 7, 8, 9]
 	},
 	14: {//17
 		trait: 5,
 		cameraZoom: 95,
 		meshRotation: 1.55,
 		morphsList: [1, 9]
+	},
+	15: {//21
+		trait: 5,
+		cameraZoom: 95,
+		meshRotation: 1.55,
+		morphsList: [1, 2, 3, 4, 6, 7, 8, 9]
 	}
 });

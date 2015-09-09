@@ -16,7 +16,8 @@ define({
 		    'Základna vem. - hloubka',
 		    'Délka zadního upnutí',
 		    'Závěsný vaz',
-		    'Post. struků - vychýlení'
+		    'Post. struků - vychýlení',
+		    'Osvalení'
 		],
 		bodyFeaturesPanelTitle: 'Znaky'
 	},
@@ -37,7 +38,8 @@ define({
 			'Udder depth',
 			'Rear udder length',
 			'Suspensory ligam.',
-			'Teat placement'
+			'Teat placement',
+			'Muscularity'
 		],
 		bodyFeaturesPanelTitle: 'Traits'
 	},
@@ -58,7 +60,8 @@ define({
 			'Euterboden',
 			'Schenkeleuterlänge',
 			'Zentralband',
-			'Strichstellung hinten'
+			'Strichstellung hinten',
+			'Bemuskelung'
 		],
 		bodyFeaturesPanelTitle: 'Körpermerkmale'		
 	}
