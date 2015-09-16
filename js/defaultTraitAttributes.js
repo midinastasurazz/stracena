@@ -5,94 +5,88 @@ define({
 		meshRotation: 2.5,
 		morphsList: [1, 9]
 	},
-	1: {//6
-		trait: 5,
-		cameraZoom: 85,
-		meshRotation: 2.5,
-		morphsList: [1, 9]
-	},
-	2: {//7
+	1: {//7
 		trait: 5,
 		cameraZoom: 85,
 		meshRotation: 2.5,
 		morphsList: [1, 7, 8, 9]
 	},
-	3: {//8
+	2: {//8
 		trait: 5,
 		cameraZoom: 95,
 		meshRotation: 1.55,
 		morphsList: [1, 9]
 	},
-	4: {//9
+	3: {//9
 		trait: 7,
 		cameraZoom: 85,
 		meshRotation: 2.5,
 		morphsList: [1, 2, 6, 9]
 	},
-	5: {//10
+	4: {//10
 		trait: 9,
 		cameraZoom: 85,
 		meshRotation: 2.5,
 		morphsList: [1, 5]
 	},
-	6: {//12	
+	5: {//12	
 		trait: 4,
 		cameraZoom: 75,
 		meshRotation: 0.28,
 		morphsList: [1, 5, 9]
 	},
-	7: {//11
+	6: {//11
 		trait: 8,
 		cameraZoom: 75,
 		meshRotation: 0.28,
 		morphsList: [1, 5, 9]
 	},
-	8: {//20
+	7: {//20
 		trait: 5,
 		cameraZoom: 95,
 		meshRotation: 1.55,
 		morphsList: [1, 9]
 	},
-	9: {//18
+	8: {//18
 		trait: 5,
 		cameraZoom: 90,
 		meshRotation: 0.1,
 		morphsList: [1, 9]
 	},
-	10: {//19
+	9: {//19
 		trait: 5,
 		cameraZoom: 90,
 		meshRotation: 0.1,
 		morphsList: [1, 9]
 	},
-	11: {//16
+	10: {//16
 		trait: 5,
 		cameraZoom: 90,
 		meshRotation: 0.1,
 		morphsList: [1, 9]
 	},
-	12: {//14
+	11: {//14
 		trait: 5,
 		cameraZoom: 75,
 		meshRotation: 2.9,
 		morphsList: [1, 9]
 	},
-	13: {//15
+	12: {//15
 		trait: 2,
 		cameraZoom: 95,
 		meshRotation: 1.34,
 		morphsList: [1, 3, 4, 5, 6, 7, 8, 9]
 	},
-	14: {//17
+	13: {//17
 		trait: 5,
 		cameraZoom: 95,
 		meshRotation: 1.55,
 		morphsList: [1, 9]
 	},
-	15: {//21
-		trait: 5,
+	14: {//21
+		trait: 6,
 		cameraZoom: 95,
 		meshRotation: 1.55,
-		morphsList: [1, 2, 3, 4, 6, 7, 8, 9]
+		morphsList: [1, 2, 3, 4, 5, 7, 8, 9]
 	}
 });
